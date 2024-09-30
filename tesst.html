@@ -1,58 +1,58 @@
-
 <script>
-    {% for line in checkout.line_items %}
-      {% if line.title == '特定のカラー診断商品' %}
-        Shopify.Checkout.OrderStatus.addContentBox(
-            '<h2>カラー診断商品をご購入ありがとうございます。</h2>'
-            '<p>お手数ですが診断する上で必要な情報のため、ご記入のご協力をよろしくお願い致します。</p>'
-             '<p>入力していただいた個人情報は、目的の範囲を超えて利用することはありません。また、ご提供いただいた個人情報は、お客様の同意なく第三者に提供しません。</p>',
-            '<form id="survey-form" action="https://your-server.com/feedback-handler.php" method="POST">' 
-            '<label for="name">お名前:</label>' 
-            '<input type="text" id="name" name="name" required>' 
-  
-            '<label for="dob">お誕生日:</label>' 
-            '<input type="date" id="dob" name="dob" required>' 
-  
-            '<label>性別:</label>' 
-            '<input type="radio" id="female" name="gender" value="female" required>' 
-            '<label for="female">女性</label>' 
-            '<input type="radio" id="male" name="gender" value="male" required>' 
-            '<label for="male">男性</label>' 
-            '<input type="radio" id="other" name="gender" value="other" required>' 
-            '<label for="other">その他</label>' 
-  
-            '<label>血液型:</label>' 
-            '<input type="radio" id="blood_a" name="blood_type" value="A" required>' 
-            '<label for="blood_a">A</label>' 
-            '<input type="radio" id="blood_b" name="blood_type" value="B" required>' 
-            '<label for="blood_b">B</label>' 
-            '<input type="radio" id="blood_o" name="blood_type" value="O" required>' 
-            '<label for="blood_o">O</label>' 
-            '<input type="radio" id="blood_ab" name="blood_type" value="AB" required>' 
-            '<label for="blood_ab">AB</label>' 
-  
-            '<label for="email">メールアドレス:</label>' 
-            '<input type="email" id="email" name="email" required>' 
-  
-            '<label for="address">住所:</label>' 
-            '<textarea id="address" name="address" required></textarea>' 
-  
-            '<label for="q1">質問項目１</label>' 
-            '<input type="text" id="size" name="q1" required>' 
-  
-            '<label for="q2">質問項目2　セレクト</label>' 
-            '<select id="q2" name="q2" required>' 
-              '<option value="select1">select1</option>' 
-              '<option value="select2">select2</option>' 
-              '<option value="select3">select3</option>' 
-              '<option value="select4">select4</option>' 
-              '<option value="select5">select5</option>' 
-            '</select>' 
-  
-            '<button type="submit">送信</button>' 
-          '</form>'
-        );
-      {% endif %}
-    {% endfor %}
-  </script>
+  {% for line in checkout.line_items %}
+    {% if line.title == '特定のカラー診断商品' %}
+      Shopify.Checkout.OrderStatus.addContentBox(
+        '<h2>カラー診断商品をご購入ありがとうございます。</h2>' + 
+        '<p>お手数ですが診断する上で必要な情報のため、ご記入のご協力をよろしくお願い致します。</p>' + 
+        '<p>入力していただいた個人情報は、目的の範囲を超えて利用することはありません。また、ご提供いただいた個人情報は、お客様の同意なく第三者に提供しません。</p>',
+        '<form id="survey-form" action="https://your-server.com/feedback-handler.php" method="POST">' + 
+          '<label for="name">お名前:</label>' + 
+          '<input type="text" id="name" name="name" required>' +
+
+          '<label for="dob">お誕生日:</label>' + 
+          '<input type="date" id="dob" name="dob" required>' +
+
+          '<label>性別:</label>' + 
+          '<input type="radio" id="female" name="gender" value="female" required>' + 
+          '<label for="female">女性</label>' + 
+          '<input type="radio" id="male" name="gender" value="male" required>' + 
+          '<label for="male">男性</label>' + 
+          '<input type="radio" id="other" name="gender" value="other" required>' + 
+          '<label for="other">その他</label>' +
+
+          '<label>血液型:</label>' + 
+          '<input type="radio" id="blood_a" name="blood_type" value="A" required>' + 
+          '<label for="blood_a">A</label>' + 
+          '<input type="radio" id="blood_b" name="blood_type" value="B" required>' + 
+          '<label for="blood_b">B</label>' + 
+          '<input type="radio" id="blood_o" name="blood_type" value="O" required>' + 
+          '<label for="blood_o">O</label>' + 
+          '<input type="radio" id="blood_ab" name="blood_type" value="AB" required>' + 
+          '<label for="blood_ab">AB</label>' +
+
+          '<label for="email">メールアドレス:</label>' + 
+          '<input type="email" id="email" name="email" required>' +
+
+          '<label for="address">住所:</label>' + 
+          '<textarea id="address" name="address" required></textarea>' +
+
+          '<label for="q1">質問項目１:</label>' + 
+          '<input type="text" id="q1" name="q1" required>' +
+
+          '<label for="q2">質問項目2　セレクト:</label>' + 
+          '<select id="q2" name="q2" required>' + 
+            '<option value="select1">select1</option>' + 
+            '<option value="select2">select2</option>' + 
+            '<option value="select3">select3</option>' + 
+            '<option value="select4">select4</option>' + 
+            '<option value="select5">select5</option>' + 
+          '</select>' +
+
+          '<button type="submit">送信</button>' + 
+        '</form>'
+      );
+    {% endif %}
+  {% endfor %}
+</script>
+
   
